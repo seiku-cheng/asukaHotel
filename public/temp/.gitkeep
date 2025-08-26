@@ -1,0 +1,2 @@
+# This file ensures the temp directory is tracked in git
+# Temporary uploaded files will be ignored but directory structure is preserved

@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  name      String
+  password  String
+  role      Role      @default(STAFF)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  bookings  Booking[]
+}
+
+model Room {
+  id            String        @id
+  name          String
+  nameEn        String
+  nameZh        String
+  type          RoomType
+  roomNumber    String
+  maxGuests     Int
+  size          Int
+  amenities     String
+  images        String        // JSON array of uploaded image URLs
+  description   String
+  descriptionEn String
+  descriptionZh String
+  isConnecting  Boolean       @default(false)
+  connectsTo    String?
+  isActive      Boolean       @default(true)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  bookings      Booking[]
+  pricing       RoomPricing[]
+}
+
+model Booking {
+  id         String        @id @default(cuid())
+  roomId     String
+  checkIn    DateTime
+  checkOut   DateTime
+  adults     Int
+  children   Int           @default(0)
+  infants    Int           @default(0)
+  guestName  String
+  guestEmail String
+  guestPhone String
+  totalPrice Int
+  status     BookingStatus @default(PENDING)
+  notes      String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  userId     String?
+  user       User?         @relation(fields: [userId], references: [id])
+  room       Room          @relation(fields: [roomId], references: [id])
+
+  @@index([roomId])
+  @@index([checkIn, checkOut])
+}
+
+model Contact {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  status    ContactStatus @default(NEW)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model RoomPricing {
+  id         String    @id @default(cuid())
+  roomId     String
+  guestType  GuestType
+  guestCount Int
+  price      Int
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  room       Room      @relation(fields: [roomId], references: [id])
+
+  @@unique([roomId, guestType, guestCount])
+}
+
+model Settings {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  ADMIN
+  STAFF
+  CUSTOMER
+}
+
+enum RoomType {
+  CORNER
+  STANDARD
+  CONNECTING
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum ContactStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+}
+
+enum GuestType {
+  ADULT
+  CHILD
+}
