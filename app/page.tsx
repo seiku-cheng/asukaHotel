@@ -8,6 +8,7 @@ import LoginModal from '@/components/LoginModal';
 import RegisterModal from '@/components/RegisterModal';
 import StructuredData from '@/components/StructuredData';
 import GoogleMap from '@/components/GoogleMap';
+import FacilitiesSection from '@/components/FacilitiesSection';
 import { Room } from '@/types';
 import { getTranslation } from '@/lib/i18n';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -123,6 +124,9 @@ export default function HomePage() {
             </p>
           </div>
         </section>
+
+        {/* Facilities Section */}
+        <FacilitiesSection />
 
         {/* Location & Map Section */}
         <section className="bg-wa-beige py-16">
