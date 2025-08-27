@@ -21,6 +21,43 @@ export const translations = {
       introduction: {
         title: '日本の心、おもてなし',
         description: '箱根仙石原寮は、箱根の美しい自然に囲まれた宿泊施設です。完全予約制で、静かで落ち着いた環境の中で、心温まるひとときをお過ごしいただけます。'
+      },
+      facilities: {
+        title: '民宿の特色設施',
+        entertainment: {
+          title: '娯楽',
+          items: [
+            {
+              name: 'ピアノ',
+              description: '美しいピアノでお楽しみください'
+            },
+            {
+              name: 'カラオケ',
+              description: '友達や家族とカラオケを楽しめます'
+            },
+            {
+              name: '囲碁',
+              description: '静かな環境で囲碁をお楽しみください'
+            },
+            {
+              name: '麻雀',
+              description: 'グループでの麻雀をお楽しみください'
+            },
+            {
+              name: 'ゴルフ練習',
+              description: 'ゴルフ練習場で技術を磨けます'
+            },
+            {
+              name: 'ゴルフコース',
+              description: '本格的なゴルフコースを楽しめます'
+            }
+          ]
+        },
+        dining: {
+          title: '料亭',
+          subtitle: '自炊可',
+          description: '伝統的な料亭で食事を楽しめます。また、自炊も可能です。'
+        }
       }
     },
     rooms: {
@@ -227,6 +264,43 @@ export const translations = {
       introduction: {
         title: 'Japanese Heart of Hospitality',
         description: 'Asuka Hotel is a traditional Japanese lodge located in the beautiful Sengokuhara area of Hakone. Operating by reservation only, enjoy a heartwarming stay in a quiet and peaceful environment.'
+      },
+      facilities: {
+        title: 'Special Facilities',
+        entertainment: {
+          title: 'Entertainment',
+          items: [
+            {
+              name: 'Piano',
+              description: 'Enjoy beautiful piano music'
+            },
+            {
+              name: 'Karaoke',
+              description: 'Have fun with friends and family'
+            },
+            {
+              name: 'Go',
+              description: 'Enjoy a quiet game of Go'
+            },
+            {
+              name: 'Mahjong',
+              description: 'Group mahjong entertainment'
+            },
+            {
+              name: 'Golf Practice',
+              description: 'Practice your golf skills'
+            },
+            {
+              name: 'Golf Course',
+              description: 'Enjoy our full golf course'
+            }
+          ]
+        },
+        dining: {
+          title: 'Traditional Restaurant',
+          subtitle: 'Self-catering available',
+          description: 'Enjoy meals in our traditional restaurant. Self-catering is also available.'
+        }
       }
     },
     rooms: {
@@ -433,6 +507,43 @@ export const translations = {
       introduction: {
         title: '日本式的待客之心',
         description: '箱根仙石原寮位于神奈川县箱根美丽的仙石原地区。采用完全预约制，在宁静祥和的环境中，享受温暖人心的美好时光。'
+      },
+      facilities: {
+        title: '民宿特色设施',
+        entertainment: {
+          title: '娱乐',
+          items: [
+            {
+              name: '钢琴',
+              description: '享受优美的钢琴演奏'
+            },
+            {
+              name: '卡拉OK',
+              description: '与朋友家人一同欢唱'
+            },
+            {
+              name: '围棋',
+              description: '在安静环境中享受围棋乐趣'
+            },
+            {
+              name: '麻将',
+              description: '团体麻将娱乐'
+            },
+            {
+              name: '高尔夫练习',
+              description: '在练习场提升球技'
+            },
+            {
+              name: '高尔夫球场',
+              description: '享受正规高尔夫球场'
+            }
+          ]
+        },
+        dining: {
+          title: '料亭',
+          subtitle: '可自炊',
+          description: '在传统料亭享用美食，也可自己下厨。'
+        }
       }
     },
     rooms: {
