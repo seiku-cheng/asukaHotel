@@ -84,18 +84,19 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-wa-brown text-center mb-8 font-noto">
+        <section className="bg-wa-beige py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-wa-brown mb-4 font-noto">
                 {t.home.featured}
               </h2>
+              <div className="w-20 h-1 bg-wa-brown mx-auto mb-8"></div>
               {isLoading ? (
                 <div className="flex items-center justify-center py-12">
-                  <div className="text-wa-gray">読み込み中...</div>
+                  <div className="text-wa-gray text-lg">読み込み中...</div>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                   {featuredRooms.map((room) => (
                     <RoomCard key={room.id} room={room} />
                   ))}
@@ -106,7 +107,7 @@ export default function HomePage() {
             <div className="text-center">
               <button
                 onClick={() => router.push('/rooms')}
-                className="bg-wa-brown text-wa-cream px-8 py-3 rounded-lg hover:bg-opacity-90 transition-colors font-medium"
+                className="bg-wa-brown text-wa-cream px-10 py-4 rounded-lg hover:bg-wa-brown/90 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 {t.nav.rooms}
               </button>
@@ -114,12 +115,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-white py-16">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-wa-brown mb-6 font-noto">
+        <section className="bg-white py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl font-bold text-wa-brown mb-4 font-noto">
               {t.home.introduction.title}
             </h2>
-            <p className="text-lg text-wa-gray leading-relaxed">
+            <div className="w-20 h-1 bg-wa-brown mx-auto mb-8"></div>
+            <p className="text-lg text-wa-gray leading-relaxed max-w-3xl mx-auto">
               {t.home.introduction.description}
             </p>
           </div>
@@ -129,12 +131,13 @@ export default function HomePage() {
         <FacilitiesSection />
 
         {/* Location & Map Section */}
-        <section className="bg-wa-beige py-16">
+        <section className="bg-wa-beige py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-wa-brown mb-6 font-noto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-wa-brown mb-4 font-noto">
                 アクセス
               </h2>
+              <div className="w-20 h-1 bg-wa-brown mx-auto mb-8"></div>
               <p className="text-lg text-wa-gray max-w-3xl mx-auto">
                 箱根仙石原の静かな環境にございます。自然豊かな箱根での滞在をお楽しみください。
               </p>
@@ -142,7 +145,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Location Information */}
-              <div className="bg-white rounded-lg shadow-lg p-8">
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
                 <h3 className="text-xl font-semibold text-wa-brown mb-6 font-noto">
                   箱根仙石原寮
                 </h3>
@@ -217,7 +220,7 @@ export default function HomePage() {
               </div>
 
               {/* Google Map */}
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                 <GoogleMap className="h-96" />
               </div>
             </div>
@@ -225,9 +228,9 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="bg-wa-brown text-wa-cream py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p>{t.common.copyright}</p>
+      <footer className="bg-wa-brown text-wa-cream py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-lg">{t.common.copyright}</p>
         </div>
       </footer>
 
