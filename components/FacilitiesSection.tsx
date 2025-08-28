@@ -29,55 +29,60 @@ export default function FacilitiesSection() {
   };
 
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-wa-brown mb-6 font-noto">
+    <section className="bg-wa-green/5 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-wa-brown mb-4 font-noto">
             {t.home.facilities.title}
           </h2>
+          <div className="w-20 h-1 bg-wa-brown mx-auto mb-8"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Entertainment Section */}
-          <div className="bg-wa-beige rounded-lg p-8">
-            <h3 className="text-2xl font-semibold text-wa-brown mb-6 font-noto text-center">
-              {t.home.facilities.entertainment.title}
-            </h3>
+          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-semibold text-wa-brown mb-4 font-noto">
+                {t.home.facilities.entertainment.title}
+              </h3>
+              <div className="w-16 h-1 bg-wa-brown/50 mx-auto"></div>
+            </div>
             <div className="grid grid-cols-2 gap-6">
               {t.home.facilities.entertainment.items.map((item, index) => (
-                <div key={index} className="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div key={index} className="bg-wa-beige/30 rounded-lg p-4 text-center hover:bg-wa-beige/50 transition-all duration-300 transform hover:-translate-y-1">
                   <div className="mb-4">
-                    <div className="w-20 h-20 bg-wa-brown/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-3xl">{facilityIcons[item.name] || '🎯'}</span>
+                    <div className="w-16 h-16 bg-wa-brown/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-2xl">{facilityIcons[item.name] || '🎯'}</span>
                     </div>
-                    <div className="w-full h-32 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
-                      <span className="text-gray-400">画像</span>
+                    <div className="w-full h-24 bg-gray-100 rounded-lg flex items-center justify-center mb-3 border-2 border-dashed border-gray-300">
+                      <span className="text-gray-400 text-sm">画像</span>
                     </div>
                   </div>
-                  <h4 className="font-semibold text-wa-brown mb-2">{item.name}</h4>
-                  <p className="text-sm text-wa-gray">{item.description}</p>
+                  <h4 className="font-semibold text-wa-brown mb-2 text-sm">{item.name}</h4>
+                  <p className="text-xs text-wa-gray leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Dining Section */}
-          <div className="bg-wa-green/10 rounded-lg p-8">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-semibold text-wa-brown mb-2 font-noto">
+          <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-semibold text-wa-brown mb-2 font-noto">
                 {t.home.facilities.dining.title}
               </h3>
-              <p className="text-wa-brown/70 font-medium">
+              <p className="text-wa-brown/70 font-medium mb-4">
                 ({t.home.facilities.dining.subtitle})
               </p>
+              <div className="w-16 h-1 bg-wa-green/50 mx-auto"></div>
             </div>
             
-            <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+            <div className="bg-wa-green/5 rounded-lg p-6 text-center hover:bg-wa-green/10 transition-all duration-300">
               <div className="mb-6">
-                <div className="w-24 h-24 bg-wa-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-4xl">🍽️</span>
+                <div className="w-20 h-20 bg-wa-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🍽️</span>
                 </div>
-                <div className="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-full h-40 bg-gray-100 rounded-lg flex items-center justify-center mb-4 border-2 border-dashed border-gray-300">
                   <span className="text-gray-400">料亭画像</span>
                 </div>
               </div>
